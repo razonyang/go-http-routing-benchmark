@@ -24,6 +24,7 @@ import (
 	"github.com/go-playground/lars"
 
 	// "github.com/daryl/zeus"
+	"github.com/clevergo/clevergo"
 	cloudykitrouter "github.com/cloudykit/router"
 	"github.com/dimfeld/httptreemux"
 	"github.com/emicklei/go-restful"
@@ -39,9 +40,10 @@ import (
 	llog "github.com/lunny/log"
 	"github.com/lunny/tango"
 	vulcan "github.com/mailgun/route"
-	"github.com/mikespook/possum"
-	possumrouter "github.com/mikespook/possum/router"
-	possumview "github.com/mikespook/possum/view"
+
+	//"github.com/mikespook/possum"
+	//possumrouter "github.com/mikespook/possum/router"
+	//possumview "github.com/mikespook/possum/view"
 	"github.com/naoina/denco"
 	urlrouter "github.com/naoina/kocha-urlrouter"
 	_ "github.com/naoina/kocha-urlrouter/doublearray"
@@ -926,6 +928,40 @@ func loadHttpRouterSingle(method, path string, handle httprouter.Handle) http.Ha
 	return router
 }
 
+// CleverGo
+func cleverGoHandle(_ *clevergo.Context) error {
+	return nil
+}
+
+func cleverGoHandleWrite(ctx *clevergo.Context) error {
+	ctx.WriteString(ctx.Params.String("name"))
+	return nil
+}
+
+func cleverGoHandleTest(ctx *clevergo.Context) error {
+	ctx.WriteString(ctx.Request.RequestURI)
+	return nil
+}
+
+func loadCleverGo(routes []route) http.Handler {
+	h := cleverGoHandle
+	if loadTestHandler {
+		h = cleverGoHandleTest
+	}
+
+	router := clevergo.NewRouter()
+	for _, route := range routes {
+		router.Handle(route.method, route.path, h)
+	}
+	return router
+}
+
+func loadCleverGoSingle(method, path string, handle clevergo.Handle) http.Handler {
+	router := clevergo.NewRouter()
+	router.Handle(method, path, handle)
+	return router
+}
+
 // httpTreeMux
 func httpTreeMuxHandler(_ http.ResponseWriter, _ *http.Request, _ map[string]string) {}
 
@@ -1238,6 +1274,7 @@ func loadPatSingle(method, path string, handler http.Handler) http.Handler {
 	return m
 }
 
+/*
 // Possum
 func possumHandler(c *possum.Context) error {
 	return nil
@@ -1271,7 +1308,7 @@ func loadPossumSingle(method, path string, handler possum.HandlerFunc) http.Hand
 	router.HandleFunc(possumrouter.Simple(path), handler, possumview.Simple("text/html", "utf-8"))
 	return router
 }
-
+*/
 // R2router
 func r2routerHandler(w http.ResponseWriter, req *http.Request, _ r2router.Params) {}
 

@@ -42,6 +42,12 @@ github.com/bmizerany/pat v0.0.0-20170815010413-6226ea591a40 h1:y4B3+GPxKlrigF1ha
 github.com/bmizerany/pat v0.0.0-20170815010413-6226ea591a40/go.mod h1:8rLXio+WjiTceGBHIoTvn60HIbs7Hm7bcHjyrSqYB9c=
 github.com/bradfitz/gomemcache v0.0.0-20180710155616-bc664df96737/go.mod h1:PmM6Mmwb0LSuEubjR8N7PtNe1KxZLtOUHtbeikc5h60=
 github.com/casbin/casbin v1.7.0/go.mod h1:c67qKN6Oum3UF5Q1+BByfFxkwKvhwW57ITjqwtzR1KE=
+github.com/clevergo/clevergo v0.1.0 h1:arCstnAMMTAOcA/g20AkrXUNLqkMCeg/U4i4kV9M5PA=
+github.com/clevergo/clevergo v0.1.0/go.mod h1:/BB51A8ohBG/GCHbN7mUPK6vJNm6XXC+4V/yS0c7RsA=
+github.com/clevergo/clevergo v0.2.0 h1:h1T73Yh+MSwDsZo+78/Zd31pk8MNOWHg7NlOpScKUe8=
+github.com/clevergo/clevergo v0.2.0/go.mod h1:/BB51A8ohBG/GCHbN7mUPK6vJNm6XXC+4V/yS0c7RsA=
+github.com/clevergo/clevergo v1.3.0 h1:2iJDoTqydA2WH2kKclLDDKeCy2ofXP0OSC6oFLDl96I=
+github.com/clevergo/clevergo v1.3.0/go.mod h1:/BB51A8ohBG/GCHbN7mUPK6vJNm6XXC+4V/yS0c7RsA=
 github.com/cloudflare/golz4 v0.0.0-20150217214814-ef862a3cdc58/go.mod h1:EOBUe0h4xcZ5GoxqC5SDxFQ8gwyZPKQoEzownBlhI80=
 github.com/cloudykit/router v0.0.0-20170501012743-15c4ed71df81 h1:aJJ1Q5RKhZo824sL70umU/tBvCYadbcqq6T9O8jPlck=
 github.com/cloudykit/router v0.0.0-20170501012743-15c4ed71df81/go.mod h1:12CrAbzvpmFeVKCqPqA9wVmO4T6TdFhCq3Nc+z8Sl/Q=

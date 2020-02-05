@@ -54,6 +54,7 @@ var (
 	gplusGorillaMux      http.Handler
 	gplusGowwwRouter     http.Handler
 	gplusHttpRouter      http.Handler
+	gplusCleverGo     http.Handler
 	gplusHttpTreeMux     http.Handler
 	gplusKocha           http.Handler
 	gplusLARS            http.Handler
@@ -128,6 +129,9 @@ func init() {
 	calcMem("HttpRouter", func() {
 		gplusHttpRouter = loadHttpRouter(gplusAPI)
 	})
+	calcMem("CleverGo", func() {
+		gplusCleverGo = loadCleverGo(gplusAPI)
+	})
 	calcMem("HttpTreeMux", func() {
 		gplusHttpTreeMux = loadHttpTreeMux(gplusAPI)
 	})
@@ -147,7 +151,7 @@ func init() {
 		gplusPat = loadPat(gplusAPI)
 	})
 	calcMem("Possum", func() {
-		gplusPossum = loadPossum(gplusAPI)
+		//gplusPossum = loadPossum(gplusAPI)
 	})
 	calcMem("R2router", func() {
 		gplusR2router = loadR2router(gplusAPI)
@@ -250,6 +254,10 @@ func BenchmarkHttpRouter_GPlusStatic(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people", nil)
 	benchRequest(b, gplusHttpRouter, req)
 }
+func BenchmarkCleverGo_GPlusStatic(b *testing.B) {
+	req, _ := http.NewRequest("GET", "/people", nil)
+	benchRequest(b, gplusCleverGo, req)
+}
 func BenchmarkHttpTreeMux_GPlusStatic(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people", nil)
 	benchRequest(b, gplusHttpTreeMux, req)
@@ -274,10 +282,10 @@ func BenchmarkPat_GPlusStatic(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people", nil)
 	benchRequest(b, gplusPat, req)
 }
-func BenchmarkPossum_GPlusStatic(b *testing.B) {
+/*func BenchmarkPossum_GPlusStatic(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people", nil)
 	benchRequest(b, gplusPossum, req)
-}
+}*/
 func BenchmarkR2router_GPlusStatic(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people", nil)
 	benchRequest(b, gplusR2router, req)
@@ -386,6 +394,10 @@ func BenchmarkHttpRouter_GPlusParam(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people/118051310819094153327", nil)
 	benchRequest(b, gplusHttpRouter, req)
 }
+func BenchmarkCleverGo_GPlusParam(b *testing.B) {
+	req, _ := http.NewRequest("GET", "/people/118051310819094153327", nil)
+	benchRequest(b, gplusCleverGo, req)
+}
 func BenchmarkHttpTreeMux_GPlusParam(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people/118051310819094153327", nil)
 	benchRequest(b, gplusHttpTreeMux, req)
@@ -410,10 +422,10 @@ func BenchmarkPat_GPlusParam(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people/118051310819094153327", nil)
 	benchRequest(b, gplusPat, req)
 }
-func BenchmarkPossum_GPlusParam(b *testing.B) {
+/*func BenchmarkPossum_GPlusParam(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people/118051310819094153327", nil)
 	benchRequest(b, gplusPossum, req)
-}
+}*/
 func BenchmarkR2router_GPlusParam(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people/118051310819094153327", nil)
 	benchRequest(b, gplusR2router, req)
@@ -522,6 +534,10 @@ func BenchmarkHttpRouter_GPlus2Params(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people/118051310819094153327/activities/123456789", nil)
 	benchRequest(b, gplusHttpRouter, req)
 }
+func BenchmarkCleverGo_GPlus2Params(b *testing.B) {
+	req, _ := http.NewRequest("GET", "/people/118051310819094153327/activities/123456789", nil)
+	benchRequest(b, gplusCleverGo, req)
+}
 func BenchmarkHttpTreeMux_GPlus2Params(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people/118051310819094153327/activities/123456789", nil)
 	benchRequest(b, gplusHttpTreeMux, req)
@@ -546,10 +562,10 @@ func BenchmarkPat_GPlus2Params(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people/118051310819094153327/activities/123456789", nil)
 	benchRequest(b, gplusPat, req)
 }
-func BenchmarkPossum_GPlus2Params(b *testing.B) {
+/*func BenchmarkPossum_GPlus2Params(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people/118051310819094153327/activities/123456789", nil)
 	benchRequest(b, gplusPossum, req)
-}
+}*/
 func BenchmarkR2router_GPlus2Params(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people/118051310819094153327/activities/123456789", nil)
 	benchRequest(b, gplusR2router, req)
@@ -640,6 +656,9 @@ func BenchmarkGowwwRouter_GPlusAll(b *testing.B) {
 func BenchmarkHttpRouter_GPlusAll(b *testing.B) {
 	benchRoutes(b, gplusHttpRouter, gplusAPI)
 }
+func BenchmarkCleverGo_GPlusAll(b *testing.B) {
+	benchRoutes(b, gplusCleverGo, gplusAPI)
+}
 func BenchmarkHttpTreeMux_GPlusAll(b *testing.B) {
 	benchRoutes(b, gplusHttpTreeMux, gplusAPI)
 }
@@ -658,9 +677,9 @@ func BenchmarkMartini_GPlusAll(b *testing.B) {
 func BenchmarkPat_GPlusAll(b *testing.B) {
 	benchRoutes(b, gplusPat, gplusAPI)
 }
-func BenchmarkPossum_GPlusAll(b *testing.B) {
+/*func BenchmarkPossum_GPlusAll(b *testing.B) {
 	benchRoutes(b, gplusPossum, gplusAPI)
-}
+}*/
 func BenchmarkR2router_GPlusAll(b *testing.B) {
 	benchRoutes(b, gplusR2router, gplusAPI)
 }
