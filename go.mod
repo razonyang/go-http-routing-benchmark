@@ -7,13 +7,11 @@ require (
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/astaxie/beego v1.12.1
 	github.com/bmizerany/pat v0.0.0-20170815010413-6226ea591a40
-	github.com/clevergo/clevergo v1.4.1-0.20200308172639-a00558bb5eb5
+	github.com/clevergo/clevergo v1.5.0
 	github.com/cloudykit/router v0.0.0-20170501012743-15c4ed71df81
 	github.com/codegangsta/inject v0.0.0-20150114235600-33e0aa1cb7c0 // indirect
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible // indirect
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
 	github.com/emicklei/go-restful v2.12.0+incompatible
-	github.com/fsnotify/fsnotify v1.4.7 // indirect
 	github.com/gin-gonic/gin v1.5.0
 	github.com/go-chi/chi v4.0.3+incompatible
 	github.com/go-macaron/inject v0.0.0-20200308113650-138e5925c53b // indirect
@@ -38,7 +36,6 @@ require (
 	github.com/lunny/log v0.0.0-20160921050905-7887c61bf0de
 	github.com/lunny/tango v0.5.6
 	github.com/mailgun/route v0.0.0-20191025171320-daa4df6c711a
-	github.com/mikespook/possum v0.0.0-20170224044927-56d7ebb6470b
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.1 // indirect
 	github.com/naoina/denco v0.0.0-20180930074809-8475105a6b4c
@@ -68,7 +65,6 @@ require (
 	golang.org/x/crypto v0.0.0-20200311171314-f7b00557c8c4 // indirect
 	golang.org/x/net v0.0.0-20200301022130-244492dfa37a // indirect
 	golang.org/x/sys v0.0.0-20200302150141-5c8b2ff67527 // indirect
-	gopkg.in/fsnotify.v1 v1.4.7 // indirect
 	gopkg.in/go-playground/validator.v9 v9.31.0 // indirect
 	gopkg.in/ini.v1 v1.54.0 // indirect
 	gopkg.in/macaron.v1 v1.3.5
