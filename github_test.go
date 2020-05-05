@@ -292,7 +292,7 @@ var (
 	githubGorillaMux      http.Handler
 	githubGowwwRouter     http.Handler
 	githubHttpRouter      http.Handler
-	githubCleverGo      http.Handler
+	githubCleverGo        http.Handler
 	githubHttpTreeMux     http.Handler
 	githubKocha           http.Handler
 	githubLARS            http.Handler
@@ -331,6 +331,9 @@ func init() {
 	calcMem("Chi", func() {
 		githubChi = loadChi(githubAPI)
 	})
+	calcMem("CleverGo", func() {
+		githubCleverGo = loadCleverGo(githubAPI)
+	})
 	calcMem("CloudyKitRouter", func() {
 		githubCloudyKitRouter = loadCloudyKitRouter(githubAPI)
 	})
@@ -366,9 +369,6 @@ func init() {
 	})
 	calcMem("HttpRouter", func() {
 		githubHttpRouter = loadHttpRouter(githubAPI)
-	})
-	calcMem("CleverGo", func() {
-		githubCleverGo = loadCleverGo(githubAPI)
 	})
 	calcMem("HttpTreeMux", func() {
 		githubHttpTreeMux = loadHttpTreeMux(githubAPI)
@@ -520,6 +520,7 @@ func BenchmarkPat_GithubStatic(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/user/repos", nil)
 	benchRequest(b, githubPat, req)
 }
+
 /*
 func BenchmarkPossum_GithubStatic(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/user/repos", nil)
@@ -661,6 +662,7 @@ func BenchmarkPat_GithubParam(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/repos/julienschmidt/httprouter/stargazers", nil)
 	benchRequest(b, githubPat, req)
 }
+
 /*
 func BenchmarkPossum_GithubParam(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/repos/julienschmidt/httprouter/stargazers", nil)
@@ -777,6 +779,7 @@ func BenchmarkMartini_GithubAll(b *testing.B) {
 func BenchmarkPat_GithubAll(b *testing.B) {
 	benchRoutes(b, githubPat, githubAPI)
 }
+
 /*func BenchmarkPossum_GithubAll(b *testing.B) {
 	benchRoutes(b, githubPossum, githubAPI)
 }

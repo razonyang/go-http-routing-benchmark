@@ -74,7 +74,7 @@ var (
 	parseGorillaMux      http.Handler
 	parseGowwwRouter     http.Handler
 	parseHttpRouter      http.Handler
-	parseCleverGo      http.Handler
+	parseCleverGo        http.Handler
 	parseHttpTreeMux     http.Handler
 	parseKocha           http.Handler
 	parseLARS            http.Handler
@@ -113,6 +113,9 @@ func init() {
 	calcMem("Chi", func() {
 		parseChi = loadChi(parseAPI)
 	})
+	calcMem("CleverGo", func() {
+		parseCleverGo = loadCleverGo(parseAPI)
+	})
 	calcMem("Denco", func() {
 		parseDenco = loadDenco(parseAPI)
 	})
@@ -145,9 +148,6 @@ func init() {
 	})
 	calcMem("HttpRouter", func() {
 		parseHttpRouter = loadHttpRouter(parseAPI)
-	})
-	calcMem("CleverGo", func() {
-		parseCleverGo = loadCleverGo(parseAPI)
 	})
 	calcMem("HttpTreeMux", func() {
 		parseHttpTreeMux = loadHttpTreeMux(parseAPI)
@@ -299,6 +299,7 @@ func BenchmarkPat_ParseStatic(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/1/users", nil)
 	benchRequest(b, parsePat, req)
 }
+
 /*func BenchmarkPossum_ParseStatic(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/1/users", nil)
 	benchRequest(b, parsePossum, req)
@@ -439,6 +440,7 @@ func BenchmarkPat_ParseParam(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/1/classes/go", nil)
 	benchRequest(b, parsePat, req)
 }
+
 /*func BenchmarkPossum_ParseParam(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/1/classes/go", nil)
 	benchRequest(b, parsePossum, req)
@@ -579,6 +581,7 @@ func BenchmarkPat_Parse2Params(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/1/classes/go/123456789", nil)
 	benchRequest(b, parsePat, req)
 }
+
 /*func BenchmarkPossum_Parse2Params(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/1/classes/go/123456789", nil)
 	benchRequest(b, parsePossum, req)
@@ -694,6 +697,7 @@ func BenchmarkMartini_ParseAll(b *testing.B) {
 func BenchmarkPat_ParseAll(b *testing.B) {
 	benchRoutes(b, parsePat, parseAPI)
 }
+
 /*func BenchmarkPossum_ParseAll(b *testing.B) {
 	benchRoutes(b, parsePossum, parseAPI)
 }*/

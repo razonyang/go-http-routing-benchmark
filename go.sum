@@ -44,6 +44,10 @@ github.com/bradfitz/gomemcache v0.0.0-20180710155616-bc664df96737/go.mod h1:PmM6
 github.com/casbin/casbin v1.7.0/go.mod h1:c67qKN6Oum3UF5Q1+BByfFxkwKvhwW57ITjqwtzR1KE=
 github.com/clevergo/clevergo v1.12.0 h1:CEZf4eybseaVwUR7pNJKHDnijhNj53NVTOYWEqdY1po=
 github.com/clevergo/clevergo v1.12.0/go.mod h1:CXwWkYV6APhZU4XQ4QS6LvsutBaZYi0wMDOanjuOIlg=
+github.com/clevergo/clevergo v1.12.1-0.20200505023642-0afecd547ad3 h1:aYOAGfXSpl5Rc177HYBYgEkjJS5syyvy7+r2qsNJ9fE=
+github.com/clevergo/clevergo v1.12.1-0.20200505023642-0afecd547ad3/go.mod h1:hYbfNXUh1ISEUAW0pxIJVCSMBMUzeZPLU/ELAyDEtB4=
+github.com/clevergo/clevergo v1.12.1 h1:FQWyUVL+4+OqxNjmCQ4+ln8kZRcngurQebXWodKX3VI=
+github.com/clevergo/clevergo v1.12.1/go.mod h1:CXwWkYV6APhZU4XQ4QS6LvsutBaZYi0wMDOanjuOIlg=
 github.com/cloudflare/golz4 v0.0.0-20150217214814-ef862a3cdc58/go.mod h1:EOBUe0h4xcZ5GoxqC5SDxFQ8gwyZPKQoEzownBlhI80=
 github.com/cloudykit/router v0.0.0-20170501012743-15c4ed71df81 h1:aJJ1Q5RKhZo824sL70umU/tBvCYadbcqq6T9O8jPlck=
 github.com/cloudykit/router v0.0.0-20170501012743-15c4ed71df81/go.mod h1:12CrAbzvpmFeVKCqPqA9wVmO4T6TdFhCq3Nc+z8Sl/Q=
@@ -59,6 +63,7 @@ github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSs
 github.com/dgrijalva/jwt-go v3.2.0+incompatible/go.mod h1:E3ru+11k8xSBh+hMPgOLZmtrrCbhqsmaPHjLKYnJCaQ=
 github.com/dimfeld/httptreemux v5.0.1+incompatible h1:Qj3gVcDNoOthBAqftuD596rm4wg/adLLz5xh5CmpiCA=
 github.com/dimfeld/httptreemux v5.0.1+incompatible/go.mod h1:rbUlSV+CCpv/SuqUTP/8Bk2O3LyUV436/yaRGkhP6Z0=
+github.com/docker/docker v1.13.1/go.mod h1:eEKB0N0r5NX/I1kEveEz05bcu8tLC/8azJZsviup8Sk=
 github.com/edsrzf/mmap-go v0.0.0-20170320065105-0bce6a688712/go.mod h1:YO35OhQPt3KJa3ryjFM5Bs14WD66h8eGKpfaBNrHW5M=
 github.com/elazarl/go-bindata-assetfs v1.0.0 h1:G/bYguwHIzWq9ZoyUQqrjTmJbbYn3j3CKKpKinvZLFk=
 github.com/elazarl/go-bindata-assetfs v1.0.0/go.mod h1:v+YaWX3bdea5J/mo8dSETolEo7R71Vk1u8bnjau5yw4=
@@ -134,6 +139,8 @@ github.com/jtolds/gls v4.20.0+incompatible h1:xdiiI2gbIgH/gLH7ADydsJ1uDOEzR8yvV7
 github.com/jtolds/gls v4.20.0+incompatible/go.mod h1:QJZ7F/aHp+rZTRtaJ1ow/lLfFfVYBRgL+9YlvaHOwJU=
 github.com/julienschmidt/httprouter v1.3.0 h1:U0609e9tgbseu3rBINet9P48AI/D3oJs4dN7jwJOQ1U=
 github.com/julienschmidt/httprouter v1.3.0/go.mod h1:JR6WtHb+2LUe8TCKY3cZOxFyyO8IZAc4RVcycCCAKdM=
+github.com/julienschmidt/httprouter v1.3.1-0.20200114094804-8c9f31f047a3 h1:LER16t0OpAiisX7ynIgoWzYdM1n2T10SffbiTPSlBHk=
+github.com/julienschmidt/httprouter v1.3.1-0.20200114094804-8c9f31f047a3/go.mod h1:JR6WtHb+2LUe8TCKY3cZOxFyyO8IZAc4RVcycCCAKdM=
 github.com/konsorten/go-windows-terminal-sequences v1.0.3 h1:CE8S1cTafDpPvMhIxNJKvHsGVBgn1xWYf1NbHQhywc8=
 github.com/konsorten/go-windows-terminal-sequences v1.0.3/go.mod h1:T0+1ngSBFLxvqU3pZ+m/2kptfBszLMUkC4ZK/EgS/cQ=
 github.com/labstack/echo/v4 v4.1.16 h1:8swiwjE5Jkai3RPfZoahp8kjVCRNq+y7Q0hPji2Kz0o=

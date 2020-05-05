@@ -7,10 +7,11 @@ require (
 	github.com/ant0ine/go-json-rest v3.3.2+incompatible
 	github.com/astaxie/beego v1.12.1
 	github.com/bmizerany/pat v0.0.0-20170815010413-6226ea591a40
-	github.com/clevergo/clevergo v1.12.0
+	github.com/clevergo/clevergo v1.12.1
 	github.com/cloudykit/router v0.0.0-20170501012743-15c4ed71df81
 	github.com/codegangsta/inject v0.0.0-20150114235600-33e0aa1cb7c0 // indirect
 	github.com/dimfeld/httptreemux v5.0.1+incompatible
+	github.com/docker/docker v1.13.1 // indirect
 	github.com/emicklei/go-restful v2.12.0+incompatible
 	github.com/gin-gonic/gin v1.6.3
 	github.com/go-chi/chi v4.1.1+incompatible
@@ -27,7 +28,7 @@ require (
 	github.com/gowww/router v0.0.0-20180327195201-5f9c626ef619
 	github.com/gravitational/trace v1.1.11 // indirect
 	github.com/jonboulle/clockwork v0.1.0 // indirect
-	github.com/julienschmidt/httprouter v1.3.0
+	github.com/julienschmidt/httprouter v1.3.1-0.20200114094804-8c9f31f047a3
 	github.com/labstack/echo/v4 v4.1.16
 	github.com/lunny/log v0.0.0-20160921050905-7887c61bf0de
 	github.com/lunny/tango v0.5.6

@@ -190,7 +190,7 @@ var (
 	staticGorillaMux      http.Handler
 	staticGowwwRouter     http.Handler
 	staticHttpRouter      http.Handler
-	staticCleverGo      http.Handler
+	staticCleverGo        http.Handler
 	staticHttpTreeMux     http.Handler
 	staticKocha           http.Handler
 	staticLARS            http.Handler
@@ -237,6 +237,9 @@ func init() {
 	calcMem("Chi", func() {
 		staticChi = loadChi(staticRoutes)
 	})
+	calcMem("CleverGo", func() {
+		staticCleverGo = loadCleverGo(staticRoutes)
+	})
 	calcMem("CloudyKitRouter", func() {
 		staticCloudyKitRouter = loadCloudyKitRouter(staticRoutes)
 	})
@@ -272,9 +275,6 @@ func init() {
 	})
 	calcMem("HttpRouter", func() {
 		staticHttpRouter = loadHttpRouter(staticRoutes)
-	})
-	calcMem("CleverGo", func() {
-		staticCleverGo = loadCleverGo(staticRoutes)
 	})
 	calcMem("HttpTreeMux", func() {
 		staticHttpTreeMux = loadHttpTreeMux(staticRoutes)
@@ -405,6 +405,7 @@ func BenchmarkMartini_StaticAll(b *testing.B) {
 func BenchmarkPat_StaticAll(b *testing.B) {
 	benchRoutes(b, staticPat, staticRoutes)
 }
+
 /*func BenchmarkPossum_StaticAll(b *testing.B) {
 	benchRoutes(b, staticPossum, staticRoutes)
 }*/

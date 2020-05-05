@@ -934,12 +934,12 @@ func cleverGoHandle(_ *clevergo.Context) error {
 }
 
 func cleverGoHandleWrite(ctx *clevergo.Context) error {
-	ctx.WriteString(ctx.Params.String("name"))
+	io.WriteString(ctx.Response, ctx.Params.String("name"))
 	return nil
 }
 
 func cleverGoHandleTest(ctx *clevergo.Context) error {
-	ctx.WriteString(ctx.Request.RequestURI)
+	io.WriteString(ctx.Response, ctx.Request.RequestURI)
 	return nil
 }
 

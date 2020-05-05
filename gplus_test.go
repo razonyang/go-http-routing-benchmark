@@ -54,7 +54,7 @@ var (
 	gplusGorillaMux      http.Handler
 	gplusGowwwRouter     http.Handler
 	gplusHttpRouter      http.Handler
-	gplusCleverGo     http.Handler
+	gplusCleverGo        http.Handler
 	gplusHttpTreeMux     http.Handler
 	gplusKocha           http.Handler
 	gplusLARS            http.Handler
@@ -93,6 +93,9 @@ func init() {
 	calcMem("Chi", func() {
 		gplusChi = loadChi(gplusAPI)
 	})
+	calcMem("CleverGo", func() {
+		gplusCleverGo = loadCleverGo(gplusAPI)
+	})
 	calcMem("CloudyKitRouter", func() {
 		gplusCloudyKitRouter = loadCloudyKitRouter(gplusAPI)
 	})
@@ -128,9 +131,6 @@ func init() {
 	})
 	calcMem("HttpRouter", func() {
 		gplusHttpRouter = loadHttpRouter(gplusAPI)
-	})
-	calcMem("CleverGo", func() {
-		gplusCleverGo = loadCleverGo(gplusAPI)
 	})
 	calcMem("HttpTreeMux", func() {
 		gplusHttpTreeMux = loadHttpTreeMux(gplusAPI)
@@ -282,6 +282,7 @@ func BenchmarkPat_GPlusStatic(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people", nil)
 	benchRequest(b, gplusPat, req)
 }
+
 /*func BenchmarkPossum_GPlusStatic(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people", nil)
 	benchRequest(b, gplusPossum, req)
@@ -422,6 +423,7 @@ func BenchmarkPat_GPlusParam(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people/118051310819094153327", nil)
 	benchRequest(b, gplusPat, req)
 }
+
 /*func BenchmarkPossum_GPlusParam(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people/118051310819094153327", nil)
 	benchRequest(b, gplusPossum, req)
@@ -562,6 +564,7 @@ func BenchmarkPat_GPlus2Params(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people/118051310819094153327/activities/123456789", nil)
 	benchRequest(b, gplusPat, req)
 }
+
 /*func BenchmarkPossum_GPlus2Params(b *testing.B) {
 	req, _ := http.NewRequest("GET", "/people/118051310819094153327/activities/123456789", nil)
 	benchRequest(b, gplusPossum, req)
@@ -677,6 +680,7 @@ func BenchmarkMartini_GPlusAll(b *testing.B) {
 func BenchmarkPat_GPlusAll(b *testing.B) {
 	benchRoutes(b, gplusPat, gplusAPI)
 }
+
 /*func BenchmarkPossum_GPlusAll(b *testing.B) {
 	benchRoutes(b, gplusPossum, gplusAPI)
 }*/
