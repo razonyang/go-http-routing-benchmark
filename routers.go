@@ -24,7 +24,7 @@ import (
 	"github.com/go-playground/lars"
 
 	// "github.com/daryl/zeus"
-	"github.com/clevergo/clevergo"
+	"clevergo.tech/clevergo"
 	cloudykitrouter "github.com/cloudykit/router"
 	"github.com/dimfeld/httptreemux"
 	"github.com/emicklei/go-restful"
@@ -933,13 +933,13 @@ func cleverGoHandle(_ *clevergo.Context) error {
 	return nil
 }
 
-func cleverGoHandleWrite(ctx *clevergo.Context) error {
-	io.WriteString(ctx.Response, ctx.Params.String("name"))
+func cleverGoHandleWrite(c *clevergo.Context) error {
+	io.WriteString(c.Response, c.Params.String("name"))
 	return nil
 }
 
-func cleverGoHandleTest(ctx *clevergo.Context) error {
-	io.WriteString(ctx.Response, ctx.Request.RequestURI)
+func cleverGoHandleTest(c *clevergo.Context) error {
+	io.WriteString(c.Response, c.Request.RequestURI)
 	return nil
 }
 
@@ -949,17 +949,17 @@ func loadCleverGo(routes []route) http.Handler {
 		h = cleverGoHandleTest
 	}
 
-	router := clevergo.NewRouter()
+	app := clevergo.New()
 	for _, route := range routes {
-		router.Handle(route.method, route.path, h)
+		app.Handle(route.method, route.path, h)
 	}
-	return router
+	return app
 }
 
 func loadCleverGoSingle(method, path string, handle clevergo.Handle) http.Handler {
-	router := clevergo.NewRouter()
-	router.Handle(method, path, handle)
-	return router
+	app := clevergo.New()
+	app.Handle(method, path, handle)
+	return app
 }
 
 // httpTreeMux
