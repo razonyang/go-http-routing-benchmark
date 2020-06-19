@@ -11,6 +11,8 @@ Of course the tested routers can be used for any kind of HTTP request → handle
  * [Gin](https://github.com/gin-gonic/gin)
  * [HttpRouter](https://github.com/julienschmidt/httprouter)
 
+ ![Benchmark](https://clevergo.tech/img/benchmark.png)
+
 ## Results
 
 ```text
